@@ -33,14 +33,14 @@ const UserSchema = Schema({
 
     Address: {
         type: String,
-        required: true,
+         
         trim: true,
         default: null
     },
 
     Role: {
         type: String,
-        required: true,
+         
         trim: true,
         default: null
     }

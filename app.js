@@ -10,6 +10,9 @@ const cors = require('cors');
 
 
 
+app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyparser.json());
+app.use(cors());
 require('./App/Route')(app)
 
 server.listen(PORT, () => {
