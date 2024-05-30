@@ -6,7 +6,9 @@ const bcrypt = require('bcrypt')
 class AuthController {
     async Login(req, res) {
         try {
+            console.log(req.body)
             const { Email, Password } = req.body;
+            
     
             const findData = await user_db.findOne({ Email: Email });
             if (!findData) {
@@ -38,7 +40,8 @@ class AuthController {
             return res.send({
                 status: true,
                 message: "Login Success",
-                data: token
+                data: findData,
+                token: token
             });
     
         } catch (error) {
@@ -53,7 +56,7 @@ class AuthController {
     async SignUp(req, res) {
         try {
             
-            const { Phone, Password, FullName, Email } = req.body;
+            const { Phone, Password, FullName, Email , Role } = req.body;
          
 
             const searchQuery = {
@@ -92,7 +95,8 @@ class AuthController {
                     Phone: Phone,
                     Password: hash,
                     FullName: FullName,
-                    Email: Email
+                    Email: Email,
+                    Role :Role
                 })
                 await newUser.save()
 
