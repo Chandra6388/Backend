@@ -56,9 +56,9 @@ class AuthController {
     async SignUp(req, res) {
         try {
             
-            const { Phone, Password, FullName, Email , Role } = req.body;
+            const { Phone, Password, FullName, Email , Role , userName } = req.body;
          
-
+ 
             const searchQuery = {
                 $or: [
                     { Phone: Phone },

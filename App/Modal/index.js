@@ -1,3 +1,4 @@
 module.exports={
-    user_db: require('./User')
+    user_db: require('./User'),
+    product : require('./Product.modal')
 }
