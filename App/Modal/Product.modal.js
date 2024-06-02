@@ -1,7 +1,9 @@
-import { Schema , model } from "mongoose";
+const { Schema, model, Types } = require('mongoose');
+
 
 const productSchema = new Schema({
     
+ 
     name: {
         type: String,
         required: true,
@@ -32,25 +34,27 @@ const productSchema = new Schema({
         type: String,
         required: true
     },
-    brand: {
-        type: String,
-        required: true
-    },
-    countInStock: {
-        type: Number,
-        required: true
-    },
-    rating: {
-        type: Number,
-        required: true
-    },
-    numReviews: {
-        type: Number,
-        required: true
-    },
+    // brand: {
+    //     type: String,
+    //     required: true
+    // },
+    // countInStock: {
+    //     type: Number,
+    //     required: true
+    // },
+    // rating: {
+    //     type: Number,
+    //     required: true
+    // },
+    // numReviews: {
+    //     type: Number,
+    //     required: true
+    // },
 
 })
 
 const Product = model("Product", productSchema);
 
-export default Product;
+
+
+module.exports = Product;
